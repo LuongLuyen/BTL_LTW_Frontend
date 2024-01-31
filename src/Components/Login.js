@@ -16,7 +16,7 @@ function Login() {
         </div>
         <div className="container">
           <button type="button" className="cancelbtn">Cancel</button>
-          <span className="psw">Quên <a href="/">mật khẩu?</a></span>
+          <span className="psw">Quên mật khẩu?</span>
         </div>
       </form>
      );

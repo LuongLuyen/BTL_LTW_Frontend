@@ -1,8 +1,11 @@
 import { MdHome } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { PiExamFill } from "react-icons/pi";
+import { useState } from "react";
 
-function Header() {
+function Header(props) {
+  const [menus,setMenus] = useState(false)
+  const [dn,setDn] = useState(false)
 const checkLogin = ()=>{
   const status = false
   if(status === true){
@@ -10,12 +13,31 @@ const checkLogin = ()=>{
   }
   return false
 }
+const clickMennu = ()=>{
+  setMenus(!menus)
+}
+const dangNhap =()=>{
+  setDn(!dn)
+  sendData()
+}
+ const sendData = () => {
+  props.parentCallback(dn)
+}
     return ( 
         <nav className="navbar navbar-expand-lg navbar-light bg-custom">
         <a className="navbar-brand text-color" href="/">Quản lý sinh viên</a>
-        <button className="navbar-toggler r" type="button" data-toggle="collapse" data-target="/navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler r" onClick={()=>clickMennu(menus)} >
           <span className="navbar-toggler-icon"></span>
         </button>
+        {menus ? 
+          <div className="menu">
+          <div className="item">Thông tin</div>
+          <div className="item">Xem điểm</div>
+          <div className="item" onClick={()=>dangNhap(dn)}>Đăng nhập</div>
+          <div className="btnnone" onClick={()=>clickMennu(menus)}>None</div>
+        </div>
+          :<></>
+          }
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">

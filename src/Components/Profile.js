@@ -4,7 +4,7 @@ import { FaFacebookF,FaTwitter,FaLinkedinIn ,FaGithub } from "react-icons/fa";
 function Profile() {
     return ( 
         <div class="cardp">
-        <img src={Avt} alt="John" style={{width:"60%",margin:"10px",borderRadius: "100px", border: "solid 1px #333"}}/>
+        <img src={Avt} alt="John" style={{width:"50%",margin:"10px",borderRadius: "100px", border: "solid 1px #333"}}/>
         <h2>Nguyễn Văn A</h2>
         <p class="title">D21CQCN12-B</p>
         <p>B21DCCN123</p>

@@ -15,11 +15,16 @@
     height: 75vh;
     background-color: #ebe9e9;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 .content {
     width: 80%;
     border-radius: 5px;
     background-color: #fff;
     border: solid 1px #c8c3c3;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 .login {
     width: 20%;
@@ -37,15 +42,46 @@
 .r {
     width: 100px;
 }
+
+.menu {
+    position: absolute;
+    background-color: brown;
+    color: #fff;
+    width: 200px;
+    height: 150px;
+    right: 0;
+    top: 70px;
+    border: solid 1px #ebe9e9;
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item {
+    margin: 5px 0 5px 60px;
+    width: 100%;
+}
+.btnnone {
+    background-color: #fff;
+    color: #ad171c;
+    height: 30px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5px;
+    border-radius: 5px
+}
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
     .login {
-        width: 100vw;
-        margin-left: 0;
+        display: none;
     }
     .content {
-        display: none;
+        width: 100vw;
+        margin-left: 0;
     }
 }
 /* Tablet: width >= 740px and width <1024px  */
