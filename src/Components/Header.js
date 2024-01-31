@@ -1,7 +1,15 @@
 import { MdHome } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { PiExamFill } from "react-icons/pi";
+
 function Header() {
+const checkLogin = ()=>{
+  const status = false
+  if(status === true){
+    return true
+  }
+  return false
+}
     return ( 
         <nav className="navbar navbar-expand-lg navbar-light bg-custom">
         <a className="navbar-brand text-color" href="/">Quản lý sinh viên</a>
@@ -18,7 +26,9 @@ function Header() {
                 Trang chủ
               </a>
             </li>
-            <li className="nav-item">
+            {checkLogin()? 
+            <>
+             <li className="nav-item">
               <a className="nav-link text-color" href="/">
               <span className="iconheader">
                 <FaUser/>
@@ -34,6 +44,10 @@ function Header() {
                 Xem điểm 
               </a>
             </li>
+            </>
+            :
+            <></>
+            }
           </ul>
         </div>
       </nav>

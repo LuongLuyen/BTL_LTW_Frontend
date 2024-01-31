@@ -1,17 +1,17 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import Login from "../Components/Login";
-import Main from "../Components/Main";
+import Profile from "../Components/Profile";
+import Point from "../Components/Point";
 function Home() {
     return ( 
         <>
           <Header/>
           <div className="container-fluid main">
             <div className="content">
-              <Main/>
+              <Point/>
             </div>
             <div className="login">
-              <Login/>
+              <Profile/>
             </div>
           </div>
           <Footer/>

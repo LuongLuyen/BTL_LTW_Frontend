@@ -1,7 +1,22 @@
-function Login() {
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import Login from "../Components/Login";
+import Main from "../Components/Main";
+function LoginPage() {
     return ( 
-        <h1>Login</h1>
+        <>
+          <Header/>
+          <div className="container-fluid main">
+            <div className="content">
+              <Main/>
+            </div>
+            <div className="login">
+              <Login/>
+            </div>
+          </div>
+          <Footer/>
+        </>
      );
 }
 
-export default Login;
+export default LoginPage;
