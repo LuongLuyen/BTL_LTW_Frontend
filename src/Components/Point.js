@@ -1,5 +1,15 @@
 import '../Assets/Point.css'
+import axios from 'axios'
+import {useEffect,useState} from 'react'
 function Point() {
+    const [listPoint, setListPoint] = useState([])
+    useEffect(() => {
+      const maSV = JSON.parse(sessionStorage.getItem('pass'))
+      axios.post(`${process.env.REACT_APP_SERVER}/api/point`,{maSV})
+        .then((response) => {
+            setListPoint(response.data)
+        })
+    }, []) 
     return ( 
         <>
             <h4>Học kỳ 2 Năm học 2021-2022</h4>
@@ -18,78 +28,20 @@ function Point() {
                         <th className='td'>Điểm TK(C)</th>
                         <th className='td'>Kết quả</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>INT1303</td>
-                        <td>07</td>
-                        <td>An toàn và bảo mật hệ thống thông tin</td>
-                        <td>03</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>A+</td>
-                        <td>V</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>INT1303</td>
-                        <td>07</td>
-                        <td>An toàn và bảo mật hệ thống thông tin</td>
-                        <td>03</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>A+</td>
-                        <td>V</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>INT1303</td>
-                        <td>07</td>
-                        <td>An toàn và bảo mật hệ thống thông tin</td>
-                        <td>03</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>A+</td>
-                        <td>V</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>INT1303</td>
-                        <td>07</td>
-                        <td>An toàn và bảo mật hệ thống thông tin</td>
-                        <td>03</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>A+</td>
-                        <td>V</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>INT1303</td>
-                        <td>07</td>
-                        <td>An toàn và bảo mật hệ thống thông tin</td>
-                        <td>03</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>A+</td>
-                        <td>V</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>INT1303</td>
-                        <td>07</td>
-                        <td>An toàn và bảo mật hệ thống thông tin</td>
-                        <td>03</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>A+</td>
-                        <td>V</td>
-                    </tr>
+                    {Array.from(listPoint).map((i,index)=>(
+                            <tr key={index+1}>
+                                <td>{index}</td>
+                                <td>{i[0].maMonHoc}</td>
+                                <td>{i[0].nhomHocPhan}</td>
+                                <td>{i[1].tenMonHoc}</td>
+                                <td>{i[1].soTin}</td>
+                                <td>{i[0].diemThiCuoiKy}</td>
+                                <td>{i[0].diemTongKetHe10}</td>
+                                <td>{i[2].diemTongKetHe4}</td>
+                                <td>{i[0].diemBangChu}</td>
+                                <td>{i[2].trangThai}</td>
+                            </tr>
+                    ))}
                 </tbody>
         </table>
         <div className='fpoint'>
