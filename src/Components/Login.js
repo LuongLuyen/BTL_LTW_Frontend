@@ -15,6 +15,9 @@ function Login() {
         .then((response) => {
             setServer(response.data.StatusServer)
         })
+        .catch((err)=>{
+          return null
+        })
   }, [userName,password])
   const HoTen = (input)=>{
     const words = input.split(" ")
@@ -31,7 +34,8 @@ function Login() {
 
       const [ho, ten] = HoTen(userName)
       if(userName ==="" || password === ""){
-          alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: ${userName+" "+ password}`)
+          alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: "${userName}" "${password}"`)
+          sessionStorage.clear()
           return null
       }
       try{
@@ -42,11 +46,13 @@ function Login() {
               sessionStorage.setItem('class', JSON.stringify(dataDB.maLop))
               window.location.href = `${process.env.REACT_APP_CLIENT}/home`
           }else {
-              alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: '${userName+" "+ password}'`)
+            alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: "${userName}" "${password}"`)
+              sessionStorage.clear()
               return null
           }
       }catch(err){
-          alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: ${userName+" "+ password}`)
+        alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: "${userName}" "${password}"`)
+          sessionStorage.clear()
           return null
       }
     }
