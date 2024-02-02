@@ -22,25 +22,28 @@ function Login() {
     }
   }
   const Authentication = async()=> {
-    const [ho, ten] = HoTen(userName)
-    if(userName ==="" || password === ""){
-        alert("Vui lòng kiểm tra lại tài khoản mật khẩu")
-        return null
-    }
-    try{
-        const res = await axios.post(`${process.env.REACT_APP_SERVER}/api/user1`, {ho, ten,password})
-        const dataDB = res.data
-        const name =dataDB.ho +" "+dataDB.ten
-        if(name === userName && dataDB.maSinhVien === password){
-            sessionStorage.setItem('class', JSON.stringify(dataDB.maLop))
-            window.location.href = `${process.env.REACT_APP_CLIENT}/home`
-        }else {
-            alert("Vui lòng kiểm tra lại tài khoản mật khẩu")
-            return null
-        }
-    }catch(err){
-        alert("Vui lòng kiểm tra lại tài khoản mật khẩu")
-        return null
+    if(userName){
+
+      const [ho, ten] = HoTen(userName)
+      if(userName ==="" || password === ""){
+          alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: ${userName+" "+ password}`)
+          return null
+      }
+      try{
+          const res = await axios.post(`${process.env.REACT_APP_SERVER}/api/user1`, {ho, ten,password})
+          const dataDB = res.data
+          const name =dataDB.ho +" "+dataDB.ten
+          if(name === userName && dataDB.maSinhVien === password){
+              sessionStorage.setItem('class', JSON.stringify(dataDB.maLop))
+              window.location.href = `${process.env.REACT_APP_CLIENT}/home`
+          }else {
+              alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: '${userName+" "+ password}'`)
+              return null
+          }
+      }catch(err){
+          alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: ${userName+" "+ password}`)
+          return null
+      }
     }
   }
     return ( 

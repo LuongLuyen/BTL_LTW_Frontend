@@ -34,7 +34,7 @@ const dangNhap =()=>{
 }
     return ( 
         <nav className="navbar navbar-expand-lg navbar-light bg-custom">
-        <a className="navbar-brand text-color" href="/home">Quản lý sinh viên</a>
+        <a className="navbar-brand text-color" href="/home">Kết quả học tập sinh viên</a>
         <button className="navbar-toggler r" onClick={()=>clickMennu(menus)} >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -42,8 +42,8 @@ const dangNhap =()=>{
           <div className="menu">
           {checkLogin()? 
           <>
-          <div className="item">Thông tin</div>
-          <div className="item">Xem điểm</div>
+          <a href="/thongtin" className="item">Thông tin</a>
+          <a href="/home" className="item">Xem điểm</a>
           </>
           :
           <div className="item" onClick={()=>dangNhap(dn)}>Đăng nhập</div>
