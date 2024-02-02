@@ -1,6 +1,7 @@
 import '../Assets/Point.css'
 import axios from 'axios'
 import {useEffect,useState} from 'react'
+import { FaSearch } from "react-icons/fa";
 function Point() {
     const [listPoint, setListPoint] = useState([])
     const [maSV, setMSV] = useState("")
@@ -43,7 +44,7 @@ function Point() {
                 :<></>}
                 <div className='search'>
                     <input className="form-control mr-sm-2 custom-i" type="search" onChange={(e)=>setMSV(e.target.value)} placeholder="Mã Sinh Viên" aria-label="Search"/>
-                    <div className="btn btn-outline-danger custom-search" onClick={searchPoint}>Search</div>
+                    <div className="btn btn-outline-danger custom-search" onClick={searchPoint}><FaSearch/></div>
                 </div>
             </div>
             <table>

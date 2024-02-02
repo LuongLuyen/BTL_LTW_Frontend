@@ -41,6 +41,7 @@
 }
 .r {
     width: 100px;
+    margin-right: 10px;
 }
 
 .menu {
@@ -49,7 +50,7 @@
     color: #fff;
     width: 200px;
     height: 150px;
-    right: 0;
+    right: 10px;
     top: 70px;
     border: solid 1px #ebe9e9;
     border-radius: 10px;

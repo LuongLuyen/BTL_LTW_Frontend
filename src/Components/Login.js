@@ -4,12 +4,17 @@ import axios from 'axios'
 function Login() {
   const [userName,setUserName]=useState(null)
   const [password,setPassword]=useState(null)
+  const [server,setServer]=useState(null)
 
   useEffect(() => {
     if( userName !== null && password !== null){
         sessionStorage.setItem('name', JSON.stringify(userName))
         sessionStorage.setItem('pass', JSON.stringify(password))
     }
+    axios.get(`${process.env.REACT_APP_SERVER}/api`)
+        .then((response) => {
+            setServer(response.data.StatusServer)
+        })
   }, [userName,password])
   const HoTen = (input)=>{
     const words = input.split(" ")
@@ -46,6 +51,14 @@ function Login() {
       }
     }
   }
+  if (!server) return (
+  < div className='w'>
+    <div className='loader'></div>
+    <h4 className='loading'>Vui lòng chờ....</h4>
+    <div className='d'>Do server free nên sau 15 phút tự tắt</div>
+    <div className='d'>Vui lòng chờ 30s đến 1 phút, F5 trang !</div>
+  </div>
+  )
     return ( 
         <>
         <div className="container">

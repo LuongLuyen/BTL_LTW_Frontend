@@ -12,9 +12,9 @@ function Main() {
                         </div>
                         <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <h5 className="card-title">Thông báo: Mở hệ thống đăng ký môn học học kỳ 2 năm học 2023-2024</h5>
+                            <p className="card-text">Hệ thống đăng ký môn học sẽ mở cho sinh viên khóa 2023 đăng ký môn học học kỳ 2 năm học 2023-2024 cụ thể:</p>
+                            <p className="card-text"><small className="text-body-secondary">20/01/2024</small></p>
                         </div>
                         </div>
                     </div>
@@ -26,9 +26,9 @@ function Main() {
                         </div>
                         <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <h5 className="card-title">Thông báo V/v: Mở hệ thống Đăng ký chuyên ngành D20VT</h5>
+                            <p className="card-text">Hệ thống sẽ mở cho sinh viên Đại học chính quy khóa 2020 ngành Kỹ thuật điện tử viễn thông đăng ký nguyện vọng chuyên ngành theo kế hoạch, cụ thể:</p>
+                            <p className="card-text"><small className="text-body-secondary">20/01/2024</small></p>
                         </div>
                         </div>
                     </div>
@@ -40,9 +40,9 @@ function Main() {
                         </div>
                         <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <h5 className="card-title">Thông báo V/v: Đăng ký môn học thay thế tốt nghiệp/ Đồ án tốt nghiệp các ngành khối kỹ thuật khóa 2019</h5>
+                            <p className="card-text">Thực hiện theo kế hoạch đăng ký môn học thay thế tốt nghiệp/ đồ án tốt nghiệp của các ngành khối kỹ thuật khóa 2019, hệ thống QLĐT sẽ mở cho sinh viên đăng ký theo đúng kế hoạch, cụ thể:</p>
+                            <p className="card-text"><small className="text-body-secondary">21/01/2024</small></p>
                         </div>
                         </div>
                     </div>
@@ -54,9 +54,9 @@ function Main() {
                         </div>
                         <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <h5 className="card-title">Thông báo: kết quả giải quyết đơn hỗ trợ đăng ký học kỳ 1 năm học 2023-2024</h5>
+                            <p className="card-text">Phòng Giáo vụ đã hoàn thành việc xử lý đơn hỗ trợ đăng ký của các khoá 2020, 2021 và 2022; Đề nghị toàn bộ sinh viên đã làm đơn kiểm tra, rà soát lại lịch học cá nhân, cụ thể như sau:</p>
+                            <p className="card-text"><small className="text-body-secondary">11/01/2024</small></p>
                         </div>
                         </div>
                     </div>
