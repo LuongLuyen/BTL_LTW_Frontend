@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
+import ThongTin from './Pages/Profile'
 import './Assets/custom.css'
 import{
   BrowserRouter as Router,
@@ -42,6 +43,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/home' element={checkLogin() ? <Home/>: <Login/>}/>
+        <Route path='/thongtin' element={checkLogin() ? <ThongTin/>: <Login/>}/>
         <Route path='/' element={<Login />}/>
       </Routes>
     </Router>
