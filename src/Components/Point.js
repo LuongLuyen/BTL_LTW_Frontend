@@ -31,7 +31,7 @@ function Point() {
     const [a,b,c]=thongKe()
     const searchPoint = async()=>{
        const res = await axios.post(`${process.env.REACT_APP_SERVER}/api/point`,{maSV})
-       const resc = await axios.post(`${process.env.REACT_APP_SERVER}/api/userc`,{maSV})
+       const resc = await axios.post(`${process.env.REACT_APP_SERVER}/api/user-code`,{maSV})
        setUserSearch(resc.data)
        setListPoint(res.data)
     }

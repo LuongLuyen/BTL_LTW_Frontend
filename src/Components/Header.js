@@ -2,6 +2,7 @@ import { MdHome } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { PiExamFill } from "react-icons/pi";
 import { useState,useEffect } from "react";
+import { MdOutlineQrCodeScanner } from "react-icons/md";
 
 function Header(props) {
   const [menus,setMenus] = useState(false)
@@ -32,9 +33,18 @@ const dangNhap =()=>{
  const sendData = () => {
   props.parentCallback(dn)
 }
+const logOut = ()=>{
+  sessionStorage.clear()
+  window.location.href = process.env.REACT_APP_CLIENT
+}
     return ( 
         <nav className="navbar navbar-expand-lg navbar-light bg-custom">
-        <a className="navbar-brand text-color" href="/home">Kết quả học tập sinh viên</a>
+        <a className="navbar-brand text-color qr" href="/home">Kết quả học tập sinh viên</a>
+        <div>
+          <a className="qrnone" href="/qrcode">
+          <MdOutlineQrCodeScanner/>
+          </a>
+        </div>
         <button className="navbar-toggler r" onClick={()=>clickMennu(menus)} >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -44,6 +54,7 @@ const dangNhap =()=>{
           <>
           <a href="/thongtin" className="item">Thông tin</a>
           <a href="/home" className="item">Xem điểm</a>
+          <span className="item" onClick={()=>logOut()}>Đăng xuất</span>
           </>
           :
           <div className="item" onClick={()=>dangNhap(dn)}>Đăng nhập</div>

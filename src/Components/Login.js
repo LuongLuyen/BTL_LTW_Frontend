@@ -39,7 +39,7 @@ function Login() {
           return null
       }
       try{
-          const res = await axios.post(`${process.env.REACT_APP_SERVER}/api/user1`, {ho, ten,password})
+          const res = await axios.post(`${process.env.REACT_APP_SERVER}/api/user-one`, {ho, ten,password})
           const dataDB = res.data
           const name =dataDB.ho +" "+dataDB.ten
           if(name === userName && dataDB.maSinhVien === password){
@@ -69,7 +69,7 @@ function Login() {
         <>
         <div className="container">
           <label htmlFor="uname"><b>Tai khoản</b></label>
-          <input type="text" placeholder="Họ và tên: (Nguyễn Văn A)" onChange={(e)=>setUserName(e.target.value)}/>
+          <input type="text" placeholder="Họ và tên: (Nguyễn Đức An)" onChange={(e)=>setUserName(e.target.value)}/>
   
           <label htmlFor="psw"><b>Mật khẩu</b></label>
           <input type="password" placeholder="Mã sinh viên:(B21DCCN001)" onChange={(e)=>setPassword(e.target.value)}/>

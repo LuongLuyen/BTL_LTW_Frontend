@@ -2,13 +2,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import ThongTin from './Pages/Profile'
+import QR from './Pages/Qrcode'
 import './Assets/custom.css'
 import{
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom'
-// import axios from 'axios'
 import {useEffect,useState} from 'react'
 
 function App() {
@@ -28,23 +28,13 @@ function App() {
     }
     return false
   }
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/api/user")
-  //   .then((response) => {
-  //     setData(response.data)
-  //   })
-  // }, []) 
-  // if (!data) return (
-  //   <div className='loading'>
-  //     <h1>Vui lòng chờ....</h1>
-  //   </div>
-  // )
   return (
     <Router>
       <Routes>
         <Route path='/home' element={checkLogin() ? <Home/>: <Login/>}/>
         <Route path='/thongtin' element={checkLogin() ? <ThongTin/>: <Login/>}/>
         <Route path='/' element={<Login />}/>
+        <Route path='/qrcode' element={<QR />}/>
       </Routes>
     </Router>
   );
