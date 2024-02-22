@@ -30,7 +30,11 @@ function Profile() {
         <a className='iconP' href="/"><FaTwitter/></a>
         <a className='iconP' href="/"><FaGithub/></a>
         <a className='iconP' href="/"><FaLinkedinIn/></a>
-        <p><button>Hồ sơ</button></p>
+        <p>
+          <a href='/thongtin'>
+          <button>Hồ sơ</button>
+          </a>
+        </p>
         <p><button onClick={()=>logOut()}>Đăng xuất</button></p>
       </div>
     );
