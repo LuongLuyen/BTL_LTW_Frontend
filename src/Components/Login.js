@@ -45,7 +45,7 @@ function Login() {
           if(name === userName && dataDB.maSinhVien === password){
               sessionStorage.setItem('class', JSON.stringify(dataDB.maLop))
               sessionStorage.setItem('id', JSON.stringify(dataDB._id))
-              window.location.href = `${process.env.REACT_APP_CLIENT}/home`
+              window.location.href = '/home'
           }else {
             alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: "${userName}" "${password}"`)
               sessionStorage.clear()
