@@ -69,7 +69,7 @@ function Login() {
     return ( 
         <>
         <div className="container">
-          <label htmlFor="uname"><b>Tai khoản</b></label>
+          <label htmlFor="uname"><b>Tài khoản</b></label>
           <input type="text" placeholder="Họ và tên: (Nguyễn Đức An)" onChange={(e)=>setUserName(e.target.value)}/>
   
           <label htmlFor="psw"><b>Mật khẩu</b></label>

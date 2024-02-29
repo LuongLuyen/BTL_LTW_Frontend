@@ -26,10 +26,10 @@ function Profile() {
         <h2>{userName}</h2>
         <p className="title">{lop}</p>
         <p>{password}</p>
-        <a className='iconP' href="/"><FaFacebookF/></a>
-        <a className='iconP' href="/"><FaTwitter/></a>
-        <a className='iconP' href="/"><FaGithub/></a>
-        <a className='iconP' href="/"><FaLinkedinIn/></a>
+        <a className='iconP' href="/home"><FaFacebookF/></a>
+        <a className='iconP' href="/home"><FaTwitter/></a>
+        <a className='iconP' href="/home"><FaGithub/></a>
+        <a className='iconP' href="/home"><FaLinkedinIn/></a>
         <p>
           <a href='/thongtin'>
           <button>Hồ sơ</button>
