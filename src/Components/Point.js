@@ -6,13 +6,21 @@ function Point() {
     const [listPoint, setListPoint] = useState([])
     const [maSV, setMSV] = useState("")
     const [userSearch, setUserSearch] = useState(null)
+    const [r,setR]=useState("")
     useEffect(() => {
       const maSV = JSON.parse(sessionStorage.getItem('pass'))
+      setR(maSV)
       axios.post(`${process.env.REACT_APP_SERVER}/api/point`,{maSV})
         .then((response) => {
             setListPoint(response.data)
         })
     }, []) 
+    const role =()=>{
+        if(r ==="ADMIN"|| r ==="GIANGVIEN"){
+            return true
+        }
+        return false
+    }
     const thongKe =()=>{
         let a= 0
         let b= 0
@@ -38,14 +46,18 @@ function Point() {
     return ( 
         <>
             <div className='titlehd'>
-                <h4 className='ten'>Học kỳ 2 Năm học 2021-2022</h4>
+                <h4 className='ten'>Kết quả học tập</h4>
                 {userSearch ? 
                 <h4 className='ten'>{userSearch.ho+" "+userSearch.ten +" "+ userSearch.maLop}</h4>
                 :<></>}
+                {role()?
+                
+                
                 <div className='search'>
                     <input className="form-control mr-sm-2 custom-i" type="search" onChange={(e)=>setMSV(e.target.value)} placeholder="Mã Sinh Viên" aria-label="Search"/>
                     <div className="btn btn-outline-danger custom-search" onClick={searchPoint}><FaSearch/></div>
                 </div>
+                :<></>}
             </div>
             <table>
                 <tbody>

@@ -2,7 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import ThongTin from './Pages/Profile'
-import QR from './Pages/Qrcode'
+import Admin from './Pages/Admin'
+import Giangvien from './Pages/Giangvien'
+import Setting from './Pages/Setting'
 import './Assets/custom.css'
 import{
   BrowserRouter as Router,
@@ -33,8 +35,10 @@ function App() {
       <Routes>
         <Route path='/home' element={checkLogin() ? <Home/>: <Login/>}/>
         <Route path='/thongtin' element={checkLogin() ? <ThongTin/>: <Login/>}/>
+        <Route path='/setting' element={<Setting/>}/>
         <Route path='/' element={<Login />}/>
-        <Route path='/qrcode' element={<QR />}/>
+        <Route path='/admin' element={<Admin />}/>
+        <Route path='/giangvien' element={<Giangvien />}/>
       </Routes>
     </Router>
   );

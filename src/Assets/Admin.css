@@ -1,0 +1,23 @@
+.admin {
+    height: 80vh;
+    margin: 10px;
+    overflow-y: scroll;
+}
+.admin_filter {
+    padding: 10px;
+}
+select {
+    width: 200px;
+    margin-left: 20px;
+}
+.admin_name {
+    font-weight: bold;
+    margin-left: 10px;
+}
+.loc {
+    color: var(--bg);
+    margin-left: 10px;
+}
+::-webkit-scrollbar {
+    display: none;
+}

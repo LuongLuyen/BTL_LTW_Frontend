@@ -37,8 +37,8 @@ function Login() {
           alert(`Vui lòng kiểm tra lại tài khoản mật khẩu: "${userName}" "${password}"`)
           sessionStorage.clear()
           return null
-      }
-      try{
+        }
+        try{
           const res = await axios.post(`${process.env.REACT_APP_SERVER}/api/user-one`, {ho, ten,password})
           const dataDB = res.data
           const name =dataDB.ho +" "+dataDB.ten
@@ -81,6 +81,8 @@ function Login() {
           </label>
         </div>
         <div className="container">
+          <div>Quản trị viên TK:<span className='dam'>ADMIN 1</span> MK:<span className='dam'>ADMIN</span></div>
+          <div>Giảng viên TK:<span className='dam'>GIANGVIEN 1</span> MK:<span className='dam'>GIANGVIEN</span></div>
           <button type="button" className="cancelbtn">Cancel</button>
           <span className="psw">Quên mật khẩu?</span>
         </div>

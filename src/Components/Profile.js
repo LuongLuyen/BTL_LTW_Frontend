@@ -16,6 +16,7 @@ function Profile() {
      setLop(lop)
     }
   }, [])
+
   const logOut = ()=>{
     sessionStorage.clear()
     window.location.href = process.env.REACT_APP_CLIENT

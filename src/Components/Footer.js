@@ -1,7 +1,7 @@
 import { FaFacebookF,FaTwitter,FaGoogle,FaInstagram ,FaLinkedinIn ,FaGithub } from "react-icons/fa";
 function Footer() {
     return ( 
-        <footer className="bg-body-tertiary text-center footer bg-custom">
+        <footer className="text-center footer bg-custom" >
             <div className="container p-4 pb-0">
                 <section className="mb-4">
                 <a

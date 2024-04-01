@@ -9,7 +9,6 @@ function Profile() {
     const [maSinhVien, setMaSinhVien] = useState()
     const [maLop, setMaLop] = useState()
     const [fullName, setFullName] = useState()
-    const [id, setId] = useState()
     const [time, setTime] = useState("Chưa cập nhật")
     const HoTen = (input)=>{
         const words = input.split(" ")
@@ -26,10 +25,6 @@ function Profile() {
         const fullName = JSON.parse(sessionStorage.getItem('name'))
         const password = JSON.parse(sessionStorage.getItem('pass'))
         const lop = JSON.parse(sessionStorage.getItem('class'))
-        const id = JSON.parse(sessionStorage.getItem('id'))
-        if (id){
-            setId(id)
-        }
         const [ho, ten] = HoTen(fullName)
         setFName(ho)
         setLName(ten)
@@ -49,24 +44,6 @@ function Profile() {
         const formattedDate = `Đã cập nhật vào ngày ${inputDate.getDate()} ${months[inputDate.getMonth()]} ${inputDate.getFullYear()}`
         return formattedDate
     }
-    const updateUser = async()=>{
-        const data =
-            {
-                maSinhVien:maSinhVien,
-                maLop:maLop,
-                ho:fName,
-                ten:lName
-            }
-        const res = await axios.put(`${process.env.REACT_APP_SERVER}/api/user/${id}`,data)
-        if(res.data){
-            sessionStorage.setItem('name', JSON.stringify(fName+ " "+lName))
-            sessionStorage.setItem('pass', JSON.stringify(maSinhVien))
-            sessionStorage.setItem('class', JSON.stringify(maLop))
-            sessionStorage.setItem('id', JSON.stringify(id))
-            setTime(converTime(res.data.updatedAt))
-            alert("Cập nhật hồ sơ thành công !")
-        }
-    }
     const logOut = ()=>{
         sessionStorage.clear()
         window.location.href = process.env.REACT_APP_CLIENT
@@ -80,9 +57,7 @@ function Profile() {
                 <div className="card p-3">
                 <div className="e-navlist e-navlist--active-bg">
                     <ul className="nav">
-                    <li className="nav-item"><a className="nav-link px-2 active" href="/thongtin"><i className="fa fa-fw fa-bar-chart mr-1"></i><span>Thông tin</span></a></li>
-                    <li className="nav-item"><a className="nav-link px-2" href="/thongtin"><i className="fa fa-fw fa-th mr-1"></i><span>Chức năng</span></a></li>
-                    <li className="nav-item"><a className="nav-link px-2" href="t/thongtin"><i className="fa fa-fw fa-cog mr-1"></i><span>Cài đặt</span></a></li>
+                    <li className="nav-item"><a className="nav-link px-2" href="/setting"><i className="fa fa-fw fa-cog mr-1"></i><span>Cài đặt thông tin</span></a></li>
                     </ul>
                 </div>
                 </div>
@@ -128,13 +103,13 @@ function Profile() {
                                     <div className="col">
                                         <div className="form-group">
                                         <label>Họ,tên đệm</label>
-                                        <input className="form-control" type="text" name="ho" placeholder="Nguyễn Văn" value={fName || ''} onChange={(e)=>setFName(e.target.value)}/>
+                                        <div className="form-control">{fName}</div>
                                         </div>
                                     </div>
                                     <div className="col">
                                         <div className="form-group">
                                         <label>Tên</label>
-                                        <input className="form-control" type="text" name="ten" placeholder="An" value={lName || ''} onChange={(e)=>setLName(e.target.value)} />
+                                        <div className="form-control">{lName}</div>
                                         </div>
                                     </div>
                                     </div>
@@ -142,7 +117,7 @@ function Profile() {
                                     <div className="col">
                                         <div className="form-group">
                                         <label>Mã sinh viên</label>
-                                        <input className="form-control" type="text" placeholder="B21DCCN001" value={maSinhVien || ''} onChange={(e)=>setMaSinhVien(e.target.value)} />
+                                        <div className="form-control">{maSinhVien}</div>
                                         </div>
                                     </div>
                                     </div>
@@ -150,17 +125,13 @@ function Profile() {
                                     <div className="col">
                                         <div className="form-group">
                                         <label>Mã lớp</label>
-                                        <input className="form-control" type="text" placeholder="D21CQCN01-B" value={maLop || ''} onChange={(e)=>setMaLop(e.target.value)} />
+                                        <div className="form-control">{maLop}</div>
                                         </div>
                                     </div>
                                     </div>
                                 </div>
                                 </div>
-                                <div className="row">
-                                <div className="col d-flex justify-content-end">
-                                    <span className="btn btn-primary" onClick={updateUser}>Cập nhật</span>
-                                </div>
-                                </div>
+                                
                             </form>
 
                             </div>

@@ -1,8 +1,9 @@
 import { MdHome } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { PiExamFill } from "react-icons/pi";
+import { RiAdminFill } from "react-icons/ri";
+import { MdAdminPanelSettings } from "react-icons/md";
 import { useState,useEffect } from "react";
-import { MdOutlineQrCodeScanner } from "react-icons/md";
 
 function Header(props) {
   const [menus,setMenus] = useState(false)
@@ -40,11 +41,6 @@ const logOut = ()=>{
     return ( 
         <nav className="navbar navbar-expand-lg navbar-light bg-custom">
         <a className="navbar-brand text-color qr" href="/home">Kết quả học tập sinh viên</a>
-        <div>
-          <a className="qrnone" href="/qrcode">
-          <MdOutlineQrCodeScanner/>
-          </a>
-        </div>
         <button className="navbar-toggler r" onClick={()=>clickMennu(menus)} >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -75,6 +71,36 @@ const logOut = ()=>{
             </li>
             {checkLogin()? 
             <>
+            {password ==="ADMIN"?<>
+            <li className="nav-item active">
+              <a className="nav-link text-color" href="/admin">
+                <span className="iconheader">
+                <MdAdminPanelSettings />
+                </span>
+                Người quản lý
+              </a>
+            </li>
+                      <li className="nav-item active">
+                      <a className="nav-link text-color" href="/giangvien">
+                        <span className="iconheader">
+                        <RiAdminFill />
+                        </span>
+                        Giảng viên
+                      </a>
+                    </li>
+            
+            </>
+            :<></>}
+            {password ==="GIANGVIEN"?
+            <li className="nav-item active">
+            <a className="nav-link text-color" href="/giangvien">
+              <span className="iconheader">
+              <RiAdminFill />
+              </span>
+              Giảng viên
+            </a>
+          </li>
+            :<></>}
              <li className="nav-item">
               <a className="nav-link text-color" href="/thongtin">
               <span className="iconheader">
